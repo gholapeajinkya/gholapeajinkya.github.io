@@ -3,6 +3,7 @@ import {
   FaBriefcase,
   FaCertificate,
   FaCode,
+  FaDownload,
   FaEnvelope,
   FaExternalLinkAlt,
   FaGithub,
@@ -30,7 +31,7 @@ export default function PortfolioApp() {
     email: "ajinkyagholape1998@gmail.com",
     linkedin: "https://www.linkedin.com/in/gholapeajinkya",
     github: "https://github.com/gholapeajinkya",
-    bio: "Frontend engineer specializing in React.js, micro-frontends, and high-performance web apps. Experienced in building scalable UI frameworks, data visualizations, and developer workflows. Passionate about AI/ML and developer experience.",
+    bio: "I’m a frontend engineer specializing in React, micro-frontends, and high-performance UI systems. I focus on building clean, scalable interfaces with strong attention to UX, performance, and modern architecture. I take pride in delivering reliable, production-ready solutions and creating reusable systems that improve team velocity and long-term maintainability.",
   };
 
   const experience = [
@@ -52,7 +53,7 @@ export default function PortfolioApp() {
         "Enhanced existing alerts sharing workflow for production readiness, resolving bugs and optimizing user experience.",
         "Led PAI dashboard integration, building reusable components, APIs, reviving stalled projects and accelerating delivery timelines.",
         "Standardized application monitoring and logging using Azure Application Insights, improving observability, debugging efficiency, and phasing out Sentry.",
-        "Mentored GDP engineers, guiding complex tasks, assigning responsibilities, and supporting career development and effective team contribution.",
+        "Mentored junior engineers, guiding complex tasks, assigning responsibilities, and supporting career development and effective team contribution.",
         "Organized and facilitated India team knowledge-sharing sessions, promoting cross-team learning and adoption of best practices.",
         "Demonstrated ownership with urgency, completing deliverables promptly, proactively resolving dependencies, and ensuring high-quality production releases.",
       ],
@@ -74,7 +75,7 @@ export default function PortfolioApp() {
     },
     {
       role: "Frontend Developer",
-      company: "Sigma Infraplan Engineering Pvt Ltd.",
+      company: "Sigma Infraplan Engineering Pvt. Ltd.",
       period: "Feb 2021 — May 2022",
       bullets: [
         "Identified web-based user interactions and developed highly-responsive user interface via React js functional component concept",
@@ -83,7 +84,7 @@ export default function PortfolioApp() {
         "Build reusable code for future use and optimized web pages for maximum speed & scalability",
         "Communicated & retrieved resources from RESTful web services",
         "Authored elegant, self-documenting code, easy to read and adopt for other developers",
-        "Worked on GIS application, handled spatial data and computed friction factor using epanet js",
+        "Worked on GIS application, handled spatial data and computed friction factor using epanet.js",
       ],
     },
     {
@@ -110,21 +111,35 @@ export default function PortfolioApp() {
     },
   ];
 
-  const skills = [
-    "React.js",
-    "Micro-frontend (Module Federation)",
-    "Webpack & CI/CD",
-    "Data visualization",
-    "LaunchDarkly / Feature flags",
-    "Testing (Jest, React Testing Library)",
-    "Observability (Azure App Insights, Sentry)",
-    "Android",
-    "Python",
-    "AI/ML prototyping",
-  ];
+  const skills = {
+    Frontend: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "React.js",
+      "Micro-frontend (Module Federation)",
+      "Redux",
+      "React Query",
+      "React Testing Library",
+      "Jest",
+      "Cypress",
+      "BFF (Backend-for-Frontend)",
+    ],
+    "Tools & DevOps": [
+      "Webpack",
+      "Rush for Monorepo",
+      "Azure DevOps",
+      "LaunchDarkly / Feature flags",
+      "Observability (Azure App Insights, Sentry)",
+    ],
+    Backend: ["Node.js", "Express.js", "GraphQL", "REST APIs"],
+    "Programming Languages": ["JavaScript", "Python", "Java"],
+    Other: ["Android", "React Native"],
+  };
 
   const certifications = [
     "React: Design Patterns",
+    "Fundamentals of Microfrontends",
     "GCP: Big Data & Machine Learning Fundamentals",
     "Classification with Transfer Learning in Keras",
     "ASP.NET Core: Building a GraphQL API",
@@ -207,6 +222,18 @@ export default function PortfolioApp() {
               >
                 <IoRocketSharp /> View projects
               </motion.a>
+              {/* <motion.a
+                href="/resume.pdf"
+                download="Ajinkya_Gholape_Resume.pdf"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 20px rgba(34, 197, 94, 0.5)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 shadow-lg transition-all"
+              >
+                <FaDownload /> Download Resume
+              </motion.a> */}
               <motion.a
                 href={`mailto:${profile.email}`}
                 whileHover={{ scale: 1.05 }}
@@ -367,21 +394,30 @@ export default function PortfolioApp() {
               <h4 className="font-semibold flex items-center gap-2">
                 <FaTools className="text-orange-400" /> Skills
               </h4>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {skills.map((s, idx) => (
-                  <motion.span
-                    key={s}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{
-                      scale: 1.1,
-                      backgroundColor: "rgba(59, 130, 246, 0.2)",
-                    }}
-                    className="px-3 py-1.5 rounded-full text-xs bg-white/10 border border-white/10 hover:border-blue-400/50 transition-all cursor-default"
-                  >
-                    {s}
-                  </motion.span>
+              <div className="mt-3 space-y-4">
+                {Object.entries(skills).map(([category, items]) => (
+                  <div key={category}>
+                    <h5 className="text-xs font-medium text-gray-400 mb-2">
+                      {category}
+                    </h5>
+                    <div className="flex flex-wrap gap-2">
+                      {items.map((s, idx) => (
+                        <motion.span
+                          key={s}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: idx * 0.05 }}
+                          whileHover={{
+                            scale: 1.1,
+                            backgroundColor: "rgba(59, 130, 246, 0.2)",
+                          }}
+                          className="px-3 py-1.5 rounded-full text-xs bg-white/10 border border-white/10 hover:border-blue-400/50 transition-all cursor-default"
+                        >
+                          {s}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -433,8 +469,7 @@ export default function PortfolioApp() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
           >
-            Interested in collaborating? Reach out for open roles, freelance
-            work, or just to chat about React and AI/ML.
+            Interested in collaborating? Reach out for open roles.
           </motion.p>
 
           <div className="mt-6 flex flex-wrap gap-4">

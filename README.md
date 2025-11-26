@@ -1,16 +1,103 @@
-# React + Vite
+# Ajinkya Gholape | Frontend Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, animated portfolio website showcasing my experience, projects, and skills as a Software Engineer II specializing in React.js and frontend development.
 
-Currently, two official plugins are available:
+🌐 **Live Site:** [gholapeajinkya.github.io](https://gholapeajinkya.github.io/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **Modern UI/UX**: Built with React 19 and Tailwind CSS 4 for a sleek, responsive design
+- **Smooth Animations**: Framer Motion for fluid page transitions and interactive elements
+- **Comprehensive Content**: Professional experience, featured projects, skills, certifications, and contact information
+- **SEO Optimized**: Meta tags for improved search engine visibility
+- **Performance**: Optimized with Vite for fast build times and excellent loading speed
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend Framework**: React 19.2.0
+- **Build Tool**: Vite 7.2.4
+- **Styling**: Tailwind CSS 4.1.17
+- **Animations**: Framer Motion 12.23.24
+- **Icons**: React Icons 5.5.0
+- **Linting**: ESLint 9.39.1
+- **Deployment**: GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/gholapeajinkya/gholapeajinkya.github.io.git
+cd gholapeajinkya.github.io
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+- `npm run deploy` - Deploy to GitHub Pages
+
+## 📂 Project Structure
+
+```
+gholapeajinkya.github.io/
+├── src/
+│   ├── App.jsx          # Main portfolio component
+│   ├── main.jsx         # Application entry point
+│   ├── index.css        # Global styles
+│   └── assets/          # Images and static assets
+├── public/              # Public assets
+├── dist/                # Production build output
+├── index.html           # HTML template
+├── vite.config.js       # Vite configuration
+├── postcss.config.js    # PostCSS configuration
+├── eslint.config.js     # ESLint configuration
+└── package.json         # Project dependencies
+```
+
+## 🎨 Customization
+
+To customize the portfolio with your own information, edit the data in `src/App.jsx`:
+
+- **Profile Information**: Update the `profile` object
+- **Experience**: Modify the `experience` array
+- **Projects**: Update the `projects` array
+- **Skills**: Edit the `skills` array
+- **Certifications**: Update the `certifications` array
+
+## 🚀 Deployment
+
+This project is configured for automatic deployment to GitHub Pages:
+
+```bash
+npm run deploy
+```
+
+This will:
+1. Build the project (`npm run build`)
+2. Deploy the `dist` folder to the `gh-pages` branch
+
+## 📝 License
+
+This project is open source and available for personal use.
+
+## 📧 Contact
+
+- **Email**: ajinkyagholape1998@gmail.com
+- **LinkedIn**: [gholapeajinkya](https://www.linkedin.com/in/gholapeajinkya)
+- **GitHub**: [gholapeajinkya](https://github.com/gholapeajinkya)
+
+---
+
+Built with ❤️ using React, Tailwind CSS, and Framer Motion

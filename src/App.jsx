@@ -131,7 +131,7 @@ export default function PortfolioApp() {
     "ASP.NET Core: Building a GraphQL API",
   ];
 
-  const languages = ["Hindi", "Marathi", "English"];
+  const languages = ["English", "Hindi", "Marathi"];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 antialiased relative overflow-hidden">

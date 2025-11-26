@@ -25,3 +25,6 @@ dist-ssr
 
 # PDF files
 *.pdf
+
+
+.vite/*

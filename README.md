@@ -1,25 +1,16 @@
-# Software Engineer
+# React + Vite
 
-## Work Experience
-**Software Engineer 1 @ Bentley Systems (_Apr 2024 - Present_)**
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-**Associate Software Engineer @ Bentley Systems (_May 2022 - Apr 2024_)**
+Currently, two official plugins are available:
 
-**Front-end Developer @ Sigma Infraplan (_Feb 2021 - May 2022_)**
-- Identified web-based user interactions and developed highly-responsive user interface via React js functional component concept
-- Designed and translated design wire-frames into high quality code
-- Employed a variety of languages such as HTML & CSS to write & create user-friendly web pages
-- Build reusable code for future use and optimized web pages for maximum speed & scalability
-- Communicated & retrieved resources from RESTful web services
-- Authored elegant, self-documenting code, easy to read and adopt for other developers
-- Worked on GIS application, handled spatial data and computed friction factor using epanet js
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-**Intern @ Laurel Technologies (_Dec 2018 - Jan 2019_)**
-- Composed & executing ~1000 of test cases and reviewed ~100 user interfaces for functionality and adherence to design guidelines
-- Tested code for robustness, executed edge case, usability, and general reliability analysis
+## React Compiler
 
-## Project
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Education
+## Expanding the ESLint configuration
 
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

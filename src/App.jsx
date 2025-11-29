@@ -102,7 +102,7 @@ export default function PortfolioApp() {
     {
       name: "Micro-Frontend Architecture with Module Federation",
       desc: "Built a micro-frontend architecture using Webpack Module Federation with two independent React apps, a host app and a remote app, both deployed via GitHub Pages. Integrated dynamic module loading, custom Webpack configuration, and client-side routing with React Router for seamless navigation across apps.",
-      link: "hhttps://gholapeajinkya.github.io/Micro-Frontend/host-app/",
+      link: "https://gholapeajinkya.github.io/Micro-Frontend/host-app/",
     },
     {
       name: "DubSync: AI-powered Speech Processing Pipeline",

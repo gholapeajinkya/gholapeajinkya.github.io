@@ -138,11 +138,26 @@ export default function PortfolioApp() {
   };
 
   const certifications = [
-    "React: Design Patterns",
-    "Fundamentals of Microfrontends",
-    "GCP: Big Data & Machine Learning Fundamentals",
-    "Classification with Transfer Learning in Keras",
-    "ASP.NET Core: Building a GraphQL API",
+    {
+      title: "React: Design Patterns",
+      url: "https://www.linkedin.com/learning/certificates/ac9c3ffcb4dad2ce39737cfe572788a7247e445149ede575da58845eece1851e",
+    },
+    {
+      title: "Fundamentals of Micro-frontends",
+      url: "https://coursera.org/share/f42049a9af8faeb05b2247eaff13b467",
+    },
+    {
+      title: "GCP: Big Data & Machine Learning Fundamentals",
+      url: "https://www.coursera.org/account/accomplishments/verify/TAZD76P79KXC",
+    },
+    {
+      title: "Classification with Transfer Learning in Keras",
+      url: "https://www.coursera.org/account/accomplishments/certificate/BJ6HKGQYSFUX",
+    },
+    {
+      title: "ASP.NET Core: Building a GraphQL API",
+      url: "https://www.linkedin.com/learning/certificates/c757af5ce04ee6e195f35a9ce087b65b5f41382ccc18dfc25bd02bfa621465d1",
+    },
   ];
 
   const languages = ["English", "Hindi", "Marathi"];
@@ -430,7 +445,14 @@ export default function PortfolioApp() {
                 {certifications.map((c, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <SiGooglecloud className="text-blue-400 mt-0.5 flex-shrink-0" />
-                    <span>{c}</span>
+                    <a
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-cyan-400 transition-colors hover:underline"
+                    >
+                      {c.title}
+                    </a>
                   </li>
                 ))}
               </ul>

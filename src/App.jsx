@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
   FaBriefcase,
   FaCertificate,
@@ -163,8 +164,15 @@ export default function PortfolioApp() {
   const languages = ["English", "Hindi", "Marathi"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 antialiased relative overflow-hidden">
-      {/* Floating background elements */}
+    <>
+      <Helmet>
+        <title>Ajinkya Gholape | Frontend Engineer - React & Micro-Frontends Specialist</title>
+        <meta name="description" content="Software Engineer II specializing in React.js, micro-frontends, and high-performance web applications. Experienced in building scalable UI systems at Bentley Systems." />
+        <link rel="canonical" href="https://gholapeajinkya.github.io/" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 antialiased relative overflow-hidden">
+        {/* Floating background elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float-delayed"></div>
 
@@ -556,5 +564,6 @@ export default function PortfolioApp() {
         </footer>
       </div>
     </div>
+    </>
   );
 }

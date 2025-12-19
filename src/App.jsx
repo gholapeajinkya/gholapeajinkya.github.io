@@ -370,18 +370,18 @@ export default function PortfolioApp() {
           </div>
         </section>
 
-        <section id="experience" className="mt-16 grid md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
-            <motion.h3
-              className="text-2xl font-bold flex items-center gap-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
-              <FaBriefcase className="text-blue-400" /> Experience
-            </motion.h3>
+        <section id="experience" className="mt-16">
+          <motion.h3
+            className="text-2xl font-bold flex items-center gap-2 mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <FaBriefcase className="text-blue-400" /> Experience
+          </motion.h3>
 
-            <div className="mt-4 space-y-4">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div className="md:col-span-2 space-y-4">
               {experience.map((e, idx) => (
                 <motion.div
                   key={e.role + idx}
@@ -420,11 +420,10 @@ export default function PortfolioApp() {
                 </motion.div>
               ))}
             </div>
-          </div>
 
-          <aside className="p-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent space-y-6">
+            <aside className="p-6 rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent space-y-6 md:sticky md:top-6 self-start">
             <div>
-              <h4 className="font-semibold flex items-center gap-2">
+              <h4 className="font-semibold flex items-center gap-2 text-lg">
                 <FaTools className="text-orange-400" /> Skills
               </h4>
               <div className="mt-3 space-y-4">
@@ -456,7 +455,7 @@ export default function PortfolioApp() {
             </div>
 
             <div>
-              <h5 className="text-sm font-medium flex items-center gap-2">
+              <h5 className="font-semibold flex items-center gap-2">
                 <FaCertificate className="text-green-400" /> Certifications
               </h5>
               <ul className="mt-2 text-sm text-gray-300 space-y-1">
@@ -477,7 +476,7 @@ export default function PortfolioApp() {
             </div>
 
             <div>
-              <h5 className="text-sm font-medium flex items-center gap-2">
+              <h5 className="font-semibold flex items-center gap-2">
                 <FaLanguage className="text-purple-400" /> Languages
               </h5>
               <div className="text-sm text-gray-300 mt-2 flex flex-wrap gap-2">
@@ -492,6 +491,7 @@ export default function PortfolioApp() {
               </div>
             </div>
           </aside>
+          </div>
         </section>
 
         <section id="contact" className="mt-20">

@@ -4,7 +4,6 @@ import {
   FaBriefcase,
   FaCertificate,
   FaCode,
-  FaDownload,
   FaEnvelope,
   FaExternalLinkAlt,
   FaGithub,

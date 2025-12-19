@@ -103,11 +103,13 @@ export default function PortfolioApp() {
       name: "Micro-Frontend Architecture with Module Federation",
       desc: "Built a micro-frontend architecture using Webpack Module Federation with two independent React apps, a host app and a remote app, both deployed via GitHub Pages. Integrated dynamic module loading, custom Webpack configuration, and client-side routing with React Router for seamless navigation across apps.",
       link: "https://gholapeajinkya.github.io/Micro-Frontend/host-app/",
+      image: "/buynest.png", // Optional: Add image URL here
     },
     {
       name: "DubSync: AI-powered Speech Processing Pipeline",
       desc: "DubSync is a Streamlit-based application for automated video dubbing. It enables users to upload or link to a video, extract and transcribe its audio, translate the dialogue, and generate a dubbed version in a target language using advanced TTS and voice cloning.",
       link: "https://gholapeajinkya-dubsync.hf.space/",
+      image: "/dubsync.jpeg",
     },
   ];
 
@@ -341,6 +343,15 @@ export default function PortfolioApp() {
                 <div className="absolute top-0 right-0 p-3 text-gray-400 group-hover:text-blue-400 transition-colors">
                   <FaExternalLinkAlt />
                 </div>
+                {p.image && (
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
                 <div className="flex items-start gap-3">
                   <div className="mt-1 text-2xl">
                     <FaCode className="text-cyan-400" />

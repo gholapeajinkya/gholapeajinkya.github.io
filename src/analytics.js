@@ -23,8 +23,6 @@ export const initGA = (measurementId) => {
       send_page_view: false, // We'll handle page views manually for better control
     },
   });
-
-  console.log('GA4 initialized with ID:', measurementId);
 };
 
 /**

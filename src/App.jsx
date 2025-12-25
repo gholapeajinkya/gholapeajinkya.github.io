@@ -19,6 +19,7 @@ import {
 import { HiSparkles } from "react-icons/hi";
 import { IoRocketSharp } from "react-icons/io5";
 import { SiGooglecloud, SiTailwindcss } from "react-icons/si";
+import { trackEvent, trackSocial, trackOutboundLink } from "./analytics";
 
 // Portfolio App (Populated from user's resume)
 // Tailwind CSS + Framer Motion single-file component
@@ -260,6 +261,7 @@ export default function PortfolioApp() {
               </motion.a> */}
               <motion.a
                 href={`mailto:${profile.email}`}
+                onClick={() => trackEvent('Contact', 'Click', 'Email Button')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white border-opacity-20 hover:bg-white hover:text-black text-sm transition-all"
@@ -282,6 +284,7 @@ export default function PortfolioApp() {
             <div className="mt-6 space-y-3 text-sm text-gray-300">
               <motion.a
                 href={`mailto:${profile.email}`}
+                onClick={() => trackEvent('Contact', 'Click', 'Email Sidebar')}
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
@@ -292,6 +295,7 @@ export default function PortfolioApp() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocial('LinkedIn', 'Click', 'Profile Link')}
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
@@ -303,6 +307,7 @@ export default function PortfolioApp() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackSocial('GitHub', 'Click', 'Profile Link')}
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
@@ -338,6 +343,7 @@ export default function PortfolioApp() {
                 href={p.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackOutboundLink(p.link, `Project: ${p.name}`)}
                 className="group block p-6 rounded-2xl bg-gradient-to-br from-white/5 via-white/3 to-transparent border border-white/10 hover:border-blue-500/50 transition-all relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-3 text-gray-400 group-hover:text-blue-400 transition-colors">
@@ -466,6 +472,7 @@ export default function PortfolioApp() {
                       href={c.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackOutboundLink(c.url, `Certificate: ${c.title}`)}
                       className="hover:text-cyan-400 transition-colors hover:underline"
                     >
                       {c.title}
@@ -515,6 +522,7 @@ export default function PortfolioApp() {
           <div className="mt-6 flex flex-wrap gap-4">
             <motion.a
               href={`mailto:${profile.email}`}
+              onClick={() => trackEvent('Contact', 'Click', 'Email Contact Section')}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(59, 130, 246, 0.4)",
@@ -529,6 +537,7 @@ export default function PortfolioApp() {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackSocial('LinkedIn', 'Click', 'Contact Section')}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(59, 130, 246, 0.4)",
@@ -543,6 +552,7 @@ export default function PortfolioApp() {
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackSocial('GitHub', 'Click', 'Contact Section')}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 5px 15px rgba(139, 92, 246, 0.4)",

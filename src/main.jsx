@@ -9,6 +9,8 @@ import { initGA, trackPageView } from './analytics'
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 if (GA_MEASUREMENT_ID) {
   initGA(GA_MEASUREMENT_ID);
+} else {
+  console.error('GA_MEASUREMENT_ID is undefined!');
 }
 
 function App() {
@@ -25,7 +27,7 @@ function App() {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>
-      <PortfolioApp />
+      <App />
     </HelmetProvider>
   </StrictMode>,
 )

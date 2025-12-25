@@ -137,7 +137,7 @@ export default function PortfolioApp() {
     ],
     Backend: ["Node.js", "Express.js", "GraphQL", "REST APIs"],
     "Programming Languages": ["JavaScript", "Python", "Java"],
-    Other: ["Android", "React Native"],
+    Other: ["Android", "React Native", "Github Copilot"],
   };
 
   const certifications = [

@@ -1,4 +1,44 @@
-import ReactGA from 'react-ga4';
+let reactGAInstance = null;
+let gaLoaderPromise = null;
+let gaInitialized = false;
+
+const loadGA = async () => {
+  if (reactGAInstance) return reactGAInstance;
+
+  if (!gaLoaderPromise) {
+    gaLoaderPromise = import('react-ga4')
+      .then((module) => {
+        reactGAInstance = module.default;
+        return reactGAInstance;
+      })
+      .catch((error) => {
+        gaLoaderPromise = null;
+        throw error;
+      });
+  }
+
+  return gaLoaderPromise;
+};
+
+const normalizeToken = (value, fallback = 'unknown') => {
+  if (!value) return fallback;
+  return String(value)
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '') || fallback;
+};
+
+const safeGA = async (callback) => {
+  try {
+    const ReactGA = await loadGA();
+    callback(ReactGA);
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.warn('Analytics call skipped:', error);
+    }
+  }
+};
 
 /**
  * Initialize Google Analytics 4
@@ -10,6 +50,8 @@ export const initGA = (measurementId) => {
     return;
   }
 
+  if (gaInitialized) return;
+
   // Only initialize in production or if explicitly enabled
   const isDevelopment = import.meta.env.DEV;
   
@@ -18,10 +60,13 @@ export const initGA = (measurementId) => {
     return;
   }
 
-  ReactGA.initialize(measurementId, {
-    gtagOptions: {
-      send_page_view: false, // We'll handle page views manually for better control
-    },
+  safeGA((ReactGA) => {
+    ReactGA.initialize(measurementId, {
+      gtagOptions: {
+        send_page_view: false,
+      },
+    });
+    gaInitialized = true;
   });
 };
 
@@ -31,10 +76,12 @@ export const initGA = (measurementId) => {
  * @param {string} title - Optional page title
  */
 export const trackPageView = (path, title) => {
-  ReactGA.send({ 
-    hitType: 'pageview', 
-    page: path,
-    title: title || document.title,
+  safeGA((ReactGA) => {
+    ReactGA.send({
+      hitType: 'pageview',
+      page: path,
+      title: title || document.title,
+    });
   });
 };
 
@@ -46,11 +93,13 @@ export const trackPageView = (path, title) => {
  * @param {number} value - Optional numeric value
  */
 export const trackEvent = (category, action, label, value) => {
-  ReactGA.event({
-    category,
-    action,
-    label,
-    value,
+  safeGA((ReactGA) => {
+    ReactGA.event({
+      category: normalizeToken(category, 'engagement'),
+      action: normalizeToken(action, 'click'),
+      label: label ? normalizeToken(label) : undefined,
+      value,
+    });
   });
 };
 
@@ -78,9 +127,5 @@ export const trackDownload = (filename) => {
  * @param {string} target - Optional target/URL
  */
 export const trackSocial = (network, action, target) => {
-  ReactGA.event({
-    category: 'Social',
-    action: `${network} - ${action}`,
-    label: target,
-  });
+  trackEvent('social', `${normalizeToken(network)}_${normalizeToken(action)}`, target);
 };

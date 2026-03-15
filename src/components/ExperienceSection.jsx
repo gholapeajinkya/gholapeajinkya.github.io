@@ -178,7 +178,7 @@ export default function ExperienceSection({
                           }
                           className={chipClass}
                         >
-                          <SkillIcon className="text-sm" />
+                          <SkillIcon className="text-sm text-sky-500" />
                           {skill}
                         </motion.span>
                       );

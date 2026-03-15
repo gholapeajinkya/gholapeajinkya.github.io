@@ -9,6 +9,7 @@ export default function ProjectsSection({
   projectCardClass,
   onProjectClick,
   shouldReduceMotion,
+  isDark,
 }) {
   const getResponsiveSources = (imagePath) => {
     if (!imagePath) {
@@ -101,7 +102,7 @@ export default function ProjectsSection({
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className={`px-2 py-1 text-xs rounded-md ${subtleTextClass} bg-slate-800/50 border border-slate-700`}
+                        className={`px-2 py-1 text-xs rounded-md ${isDark ? 'bg-slate-800/50 border border-slate-700 text-slate-300' : 'bg-slate-100 border border-slate-300 text-slate-600'}`}
                       >
                         {tech}
                       </span>
@@ -147,4 +148,5 @@ ProjectsSection.propTypes = {
   projectCardClass: PropTypes.string.isRequired,
   onProjectClick: PropTypes.func.isRequired,
   shouldReduceMotion: PropTypes.bool,
+  isDark: PropTypes.bool,
 };

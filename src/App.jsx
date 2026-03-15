@@ -336,6 +336,7 @@ export default function PortfolioApp() {
               projectCardClass={projectCardClass}
               onProjectClick={(link, label) => trackOutboundLink(link, label)}
               shouldReduceMotion={shouldReduceMotion}
+              isDark={isDark}
             />
           </Suspense>
         </DeferredSection>

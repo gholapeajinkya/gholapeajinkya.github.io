@@ -29,7 +29,7 @@ export default function ContactSection({
         animate={shouldReduceMotion ? undefined : { opacity: 1 }}
         transition={shouldReduceMotion ? undefined : { delay: 0.25 }}
       >
-        Interested in collaborating? Reach out for open roles.
+        Open to senior frontend, full-stack, or AI engineering roles. Especially interested in teams building at the intersection of AI and real-world software. Let's talk.
       </motion.p>
 
       <div className="mt-6 flex flex-wrap gap-4">

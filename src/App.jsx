@@ -141,16 +141,16 @@ export default function PortfolioApp() {
   return (
     <>
       <Helmet>
-        <title>Ajinkya Gholape | Frontend Engineer - React & Micro-Frontends Specialist</title>
-        <meta name="description" content="Software Engineer II specializing in React.js, micro-frontends, and high-performance web applications. Experienced in building scalable UI systems at Bentley Systems." />
+        <title>Ajinkya Gholape | Frontend & AI Engineer</title>
+        <meta name="description" content="Frontend & AI Engineer at Bentley Systems. Creator of DubSync — AI video dubbing with voice cloning." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gholapeajinkya.github.io/" />
-        <meta property="og:title" content="Ajinkya Gholape | Frontend Engineer - React & Micro-Frontends Specialist" />
-        <meta property="og:description" content="Software Engineer II specializing in React.js, micro-frontends, and high-performance web applications." />
+        <meta property="og:title" content="Ajinkya Gholape | Frontend & AI Engineer" />
+        <meta property="og:description" content="Frontend & AI Engineer at Bentley Systems. Creator of DubSync — AI video dubbing with voice cloning." />
         <meta property="og:image" content="https://gholapeajinkya.github.io/og-image.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="Ajinkya Gholape | Frontend Engineer - React & Micro-Frontends Specialist" />
-        <meta property="twitter:description" content="Software Engineer II specializing in React.js, micro-frontends, and high-performance web applications." />
+        <meta property="twitter:title" content="Ajinkya Gholape | Frontend & AI Engineer" />
+        <meta property="twitter:description" content="Frontend & AI Engineer at Bentley Systems. Creator of DubSync — AI video dubbing with voice cloning." />
         <meta property="twitter:image" content="https://gholapeajinkya.github.io/og-image.jpg" />
         <link rel="canonical" href="https://gholapeajinkya.github.io/" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -239,7 +239,7 @@ export default function PortfolioApp() {
             className="md:col-span-2"
           >
             <h2 className="text-4xl font-bold leading-tight" id="intro-heading">
-              I build scalable React front-ends with excellent UX.
+              I build enterprise IoT platforms and ship AI tools that work.
             </h2>
             <p className={`mt-4 max-w-2xl ${mutedTextClass}`}>{profile.bio}</p>
 
@@ -279,9 +279,13 @@ export default function PortfolioApp() {
             })}
             className={panelClass}
           >
-            <div className="w-60 h-60 mx-auto rounded-xl bg-gradient-to-br from-sky-500 via-indigo-500 to-violet-500 flex items-center justify-center text-4xl font-bold text-white shadow-xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-              <span className="relative z-10">AG</span>
+            <div className="w-60 h-60 mx-auto rounded-full border-4 border-sky-500/50 shadow-xl relative overflow-hidden group">
+              <img 
+                src="/profile_picture.jpeg" 
+                alt="Ajinkya Gholape" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </div>
             <div className={`mt-6 space-y-3 text-sm ${mutedTextClass}`}>
               <motion.a

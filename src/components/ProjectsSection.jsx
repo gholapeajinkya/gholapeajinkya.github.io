@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaCode, FaExternalLinkAlt, FaLightbulb } from "react-icons/fa";
+import { FaCode, FaExternalLinkAlt, FaGithub, FaLightbulb } from "react-icons/fa";
 import PropTypes from "prop-types";
 
 export default function ProjectsSection({
@@ -96,6 +96,32 @@ export default function ProjectsSection({
                 <p className={`mt-2 text-sm leading-relaxed ${mutedTextClass}`}>
                   {project.desc}
                 </p>
+                {project.tech && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className={`px-2 py-1 text-xs rounded-md ${subtleTextClass} bg-slate-800/50 border border-slate-700`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {project.github && (
+                  <div className="mt-3">
+                    <span
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.open(project.github, '_blank', 'noopener,noreferrer');
+                      }}
+                      className={`inline-flex items-center gap-1.5 text-sm ${subtleTextClass} hover:text-sky-500 transition-colors cursor-pointer`}
+                    >
+                      <FaGithub /> View on GitHub
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </motion.a>
@@ -112,6 +138,8 @@ ProjectsSection.propTypes = {
       desc: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
       image: PropTypes.string,
+      tech: PropTypes.arrayOf(PropTypes.string),
+      github: PropTypes.string,
     })
   ).isRequired,
   mutedTextClass: PropTypes.string.isRequired,

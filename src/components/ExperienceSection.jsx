@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import {
-  FaAndroid,
   FaBriefcase,
   FaCertificate,
   FaCubes,
@@ -10,14 +9,15 @@ import {
   FaExternalLinkAlt,
   FaLanguage,
   FaLightbulb,
+  FaLinkedin,
   FaMicrosoft,
   FaProjectDiagram,
   FaReact,
+  FaRobot,
   FaServer,
   FaStar,
   FaTools,
   FaFlag,
-  FaJava,
 } from "react-icons/fa";
 import {
   SiCss3,
@@ -75,12 +75,12 @@ export default function ExperienceSection({
     "REST APIs": FaExchangeAlt,
     JavaScript: SiJavascript,
     Python: SiPython,
-    Java: FaJava,
-    Android: FaAndroid,
-    "React Native": FaReact,
     "Github Copilot": SiGithubcopilot,
-    "AI/ML Concepts": FaLightbulb,
-    "Neural Networks": FaProjectDiagram,
+    "OpenAI / GPT-4": FaRobot,
+    "Whisper": FaRobot,
+    "Hugging Face": FaRobot,
+    "Voice Cloning / F5-TTS": FaRobot,
+    "Prompt Engineering": FaLightbulb,
   };
 
   return (
@@ -136,6 +136,18 @@ export default function ExperienceSection({
               </div>
             </motion.div>
           ))}
+          
+          <p className={`mt-4 text-sm ${mutedTextClass}`}>
+            For full experience details, view my{" "}
+            <a
+              href="https://www.linkedin.com/in/gholapeajinkya/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sky-500 hover:text-sky-400 transition-colors"
+            >
+              LinkedIn <FaLinkedin className="text-sm" />
+            </a>
+          </p>
         </div>
 
         <aside className={`${panelClass} space-y-6 md:sticky md:top-6 self-start`}>
